@@ -1,23 +1,42 @@
+import Header from './components/Header'
+import Contact from './components/Contact'
+import Profile from './components/Profile'
+import Education from './components/Education'
+import Experience from './components/Experience'
+import Footer from './components/Footer'
+
+function edit(){
+  console.log('edit')
+}
+
 function App() {
   return (
-    <body>
-      {/* <Header /> */}
+    <div>
+      <Header name="John Smith" edit={edit}/>
       <main>
-        <div class="py-5">
+        <div className="py-5">
           <div className="container">
             <div className="row">
               <div className="col-sm-4">
-                <p>Contact Details Here</p>
+                <Contact edit={edit} />
               </div>
               <div className="col-sm-8">
-                <p>personal statement here</p>
+                <Profile />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <Education />
+              </div>
+              <div className="col-sm-8">
+                <Experience />
               </div>
             </div>
           </div>
         </div>
       </main> 
-      {/* <Footer /> */}
-    </body>
+      <Footer />
+    </div>
   );
 }
 
