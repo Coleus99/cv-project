@@ -5,19 +5,25 @@ import Education from './components/Education'
 import Experience from './components/Experience'
 import Footer from './components/Footer'
 import Form from './components/Form'
+import { Component } from 'react'
 
-let targetState = {}
-
-function edit(state){
-  targetState = state
-  console.log(targetState)
+function edit(target){
+  console.log(target)
 }
 
-function App() {
-  return (
-    <div>
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      name: "John Doe",
+      age: 50
+    }
+  }
+  render(){
+    return(
+      <div>
       <Header name="John Smith" edit={edit}/>
-      <Form targetState={targetState} />
+      <Form />
       <main>
         <div className="py-5">
           <div className="container">
@@ -42,7 +48,8 @@ function App() {
       </main> 
       <Footer />
     </div>
-  );
+    )
+  }
 }
 
 export default App;
