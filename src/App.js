@@ -4,15 +4,20 @@ import Profile from './components/Profile'
 import Education from './components/Education'
 import Experience from './components/Experience'
 import Footer from './components/Footer'
+import Form from './components/Form'
 
-function edit(){
-  console.log('edit')
+let targetState = {}
+
+function edit(state){
+  targetState = state
+  console.log(targetState)
 }
 
 function App() {
   return (
     <div>
       <Header name="John Smith" edit={edit}/>
+      <Form targetState={targetState} />
       <main>
         <div className="py-5">
           <div className="container">
