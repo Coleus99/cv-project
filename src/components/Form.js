@@ -2,14 +2,20 @@ import { Component } from "react"
 
 class Form extends Component{
   render(){
-    // const editFields = Object.keys(this.props.targetState).map(prop => {
-    //   return <input value={this.props.targetState[prop]} />
-    // })
-    // console.log(editFields)
+    console.log('updated')
+    const editFields = this.props.fields.map(field => {
+      return (
+        <div className="form-group">
+          <label for={field}>{field}</label>
+          <input type="text" className="formControl" id={field} />
+        </div>
+      ) 
+    })
     return(
       <form>
         <p>Form below</p>
-        {/* {editFields} */}
+        {editFields}
+        <button type="submit">Submit</button>
       </form>
     )
   }

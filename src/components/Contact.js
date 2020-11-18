@@ -4,10 +4,9 @@ class Contact extends Component {
   render() {
     return (
       <div>
-        <form>
-          <input id="email" type="email" placeholder="email" />
-        </form>
-        <i class="fas fa-edit" onClick={(e) => this.props.edit(e)}></i>
+        <h3>Contact Details</h3>
+        <p>Email: {this.props.contact.email}</p>
+        <i class="fas fa-edit" onClick={() => this.props.edit(this.props.id, {email:'chris',phone:'1234'})}></i>
       </div>
     );
   }
