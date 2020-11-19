@@ -11,6 +11,7 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
+      editTarget : '',
       formFields : [],
       title: {
         name: "John Doe",
@@ -24,26 +25,24 @@ class App extends Component{
   }
 
   edit = (target) => {
-    // console.log(Object.keys(this.state[target]))
     let newState=this.state;
-    newState.formFields=Array.from(Object.keys(this.state[target]))
-    console.log(newState)
-    this.setState(newState)
+    newState.editTarget=target;
+    newState.formFields=this.state[target];
+    this.setState(newState);
   }
-
-  // this is more for saving the data
-  // edit = (target, data) => {
-  //   console.log(target, data)
-  //   let newState={};
-  //   newState[target]=data
-  //   this.setState(newState)
-  // }
+  save = (e, data) => {
+    e.preventDefault()
+    let newState=this.state;
+    newState[this.state.editTarget]=data
+    this.setState(newState)
+    console.log(this.state)
+  }
 
   render(){
     return(
       <div>
       <Header id="title" title={this.state.title} edit={this.edit}/>
-      <Form fields={this.state.formFields} />
+      <Form fields={this.state.formFields} save={this.save} />
       <main>
         <div className="py-5">
           <div className="container">

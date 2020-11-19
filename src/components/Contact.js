@@ -6,7 +6,7 @@ class Contact extends Component {
       <div>
         <h3>Contact Details</h3>
         <p>Email: {this.props.contact.email}</p>
-        <i class="fas fa-edit" onClick={() => this.props.edit(this.props.id, {email:'chris',phone:'1234'})}></i>
+        <i className="fas fa-edit" onClick={() => this.props.edit(this.props.id)}></i>
       </div>
     );
   }
