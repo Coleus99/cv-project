@@ -9,7 +9,7 @@ class Form extends Component{
   }
   storeValue = (e) => {
     let newState=this.state;
-    newState.section[e.target.id] = e.target.value;
+    newState.section[e.target.id][0] = e.target.value;
     this.setState(newState);
   }
   componentDidUpdate(prevProps) {
@@ -24,11 +24,33 @@ class Form extends Component{
    }
    
   render(){
+    let input;
     const editFields = Object.keys(this.props.fields).map(field => {
+      if (this.props.fields[field][1] === "textarea") {
+        input = (
+          <textarea
+            onChange={this.storeValue}
+            type={this.props.fields[field][1]}
+            className="formControl"
+            id={field}
+            value={this.props.fields[field][0] || ""}
+          ></textarea>
+        );
+      } else {
+        input = (
+          <input
+            onChange={this.storeValue}
+            type={this.props.fields[field][1]}
+            className="formControl"
+            id={field}
+            value={this.props.fields[field][0] || ""}
+          />
+        );
+      }
       return (
         <div className="form-group" key={field}>
           <label htmlFor={field}>{field}</label>
-          <input onChange={this.storeValue} type="text" className="formControl" id={field} value={this.state.section[field] || ''} />
+          {input}
         </div>
       ) 
     })
@@ -47,6 +69,7 @@ class Form extends Component{
               <p>Form below</p>
               {editFields}
               <button type="submit">Submit</button>
+              <button data-dismiss="modal">Close</button>
             </form>
             </div>
           </div>

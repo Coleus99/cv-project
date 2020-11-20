@@ -5,13 +5,14 @@ class Header extends Component {
     return (
       <div className="jumbotron d-flex justify-content-center">
         <div>
-          <h1>{this.props.title.name}</h1>
-          <h4>{this.props.title.position}</h4>
+          <h1>{this.props.title.name[0]}</h1>
+          <h4>{this.props.title.position[0]}</h4>
         </div>
         <i
           className="fas fa-edit"
           onClick={() => this.props.edit(this.props.id)}
-          data-toggle="modal" data-target="#editModal"
+          data-toggle="modal"
+          data-target="#editModal"
         ></i>
       </div>
     );

@@ -5,7 +5,7 @@ class Experience extends Component {
     return (
       <div className="card-body">
         <h3>Experience</h3>
-        <p>{this.props.experience.details}</p>
+        <p>{this.props.experience.details[0]}</p>
         <i className="fas fa-edit" onClick={() => this.props.edit(this.props.id)} data-toggle="modal" data-target="#editModal"></i>
       </div>
     );

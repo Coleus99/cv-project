@@ -14,23 +14,26 @@ class App extends Component {
       editTarget: "",
       formFields: [],
       title: {
-        name: "John Doe",
-        position: "Digital Designer",
+        name: ["John Doe","text"],
+        position: ["Digital Designer","text"],
       },
       contact: {
-        email: "john@example.com",
-        phone: "02736152361",
+        email: ["john@example.com", "email"],
+        phone: ["02736152361", "number"],
       },
       profile: {
-        about: "I am a real go-getter. I love using React to build projects.",
+        about: [
+          "I am a real go-getter. I love using React to build projects.",
+          "textarea"
+        ]
       },
       education: {
         qualifications:
-          "1st Class Degree in Computer Science. A level Maths and Physics",
+          ["1st Class Degree in Computer Science. A level Maths and Physics", "textarea"],
       },
       experience: {
         details:
-          "4 years experience as a digital designer, numerous projects built as part of the Odin Project",
+          ["4 years experience as a digital designer, numerous projects built as part of the Odin Project", "textarea"],
       },
     };
   }
@@ -46,7 +49,6 @@ class App extends Component {
     let newState = this.state;
     newState[this.state.editTarget] = data;
     this.setState(newState);
-    console.log(this.state);
   };
 
   render() {
