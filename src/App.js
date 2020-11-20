@@ -53,12 +53,12 @@ class App extends Component {
     return (
       <div>
         <Header id="title" title={this.state.title} edit={this.edit} />
-        <Form fields={this.state.formFields} save={this.save} />
+        <Form fields={this.state.formFields} save={this.save} editTarget={this.state.editTarget}/>
         <main>
           <div className="py-5">
             <div className="container">
               <div className="row">
-                <div className="col-sm-4">
+                <div className="col-md-4">
                   <div className="card border-light mb-3" style={{boxShadow: `2px 2px 2px #e9e9e9`}}>
                     <Contact
                       id="contact"
@@ -67,7 +67,7 @@ class App extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-md-8">
                   <div className="card border-light mb-3" style={{boxShadow: `2px 2px 2px #e9e9e9`}}>
                     <Profile
                       id="profile"
@@ -78,7 +78,7 @@ class App extends Component {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-4">
+                <div className="col-md-4">
                   <div className="card border-light mb-3" style={{boxShadow: `2px 2px 2px #e9e9e9`}}>
                     <Education
                       id="education"
@@ -87,7 +87,7 @@ class App extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-sm-8">
+                <div className="col-md-8">
                   <div className="card border-light mb-3" style={{boxShadow: `2px 2px 2px #e9e9e9`}}>
                     <Experience
                       id="experience"

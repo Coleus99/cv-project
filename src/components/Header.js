@@ -11,6 +11,7 @@ class Header extends Component {
         <i
           className="fas fa-edit"
           onClick={() => this.props.edit(this.props.id)}
+          data-toggle="modal" data-target="#editModal"
         ></i>
       </div>
     );
