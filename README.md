@@ -10,3 +10,7 @@ Part of the Odin Project Full-Stack JS course
 * Practice building with React
 * Demonstrate OOP by breaking down into components
 * GitHub Practice
+
+## Potential Improvements
+* Use React-Bootstrap to handle the modal - so we can close on submit rather than separate button. Will require some understanding of React hooks
+* Add an image field to the title
