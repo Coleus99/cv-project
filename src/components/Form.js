@@ -31,7 +31,7 @@ class Form extends Component{
           <textarea
             onChange={this.storeValue}
             type={this.props.fields[field][1]}
-            className="formControl"
+            className="form-control"
             id={field}
             value={this.props.fields[field][0] || ""}
           ></textarea>
@@ -41,7 +41,7 @@ class Form extends Component{
           <input
             onChange={this.storeValue}
             type={this.props.fields[field][1]}
-            className="formControl"
+            className="form-control"
             id={field}
             value={this.props.fields[field][0] || ""}
           />
@@ -49,7 +49,7 @@ class Form extends Component{
       }
       return (
         <div className="form-group" key={field}>
-          <label htmlFor={field}>{field}</label>
+          <label htmlFor={field}>{this.properCase(field)}</label>
           {input}
         </div>
       ) 
@@ -66,10 +66,9 @@ class Form extends Component{
             </div>
             <div className="modal-body">
             <form onSubmit={(e) => this.props.save(e, this.props.fields)}>
-              <p>Form below</p>
               {editFields}
-              <button type="submit">Submit</button>
-              <button data-dismiss="modal">Close</button>
+              <button type="submit" className="btn btn-primary mr-2">Submit</button>
+              <button data-dismiss="modal" className="btn btn-secondary">Close</button>
             </form>
             </div>
           </div>
