@@ -56,7 +56,7 @@ const Form = ( {fields, save, editTarget, showDialog, close} ) => {
   })
 
   return (
-    <Dialog isOpen={showDialog} onDismiss={close}>
+    <Dialog style={{ minWidth: 300 }} isOpen={showDialog} onDismiss={close}>
       <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="editModalLabel">Edit {editTarget} </h5>
