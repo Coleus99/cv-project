@@ -11,8 +11,10 @@ const Form = ( {fields, save, editTarget, showDialog, close} ) => {
   }, [fields])
 
   let storeValue = (e) => {
-    console.log(e)
-    setFormData({...formData, [e.target.id] : [e.target.value]})
+    let dataObject = {}
+    dataObject[0]=e.target.value
+    dataObject[1]=e.target.type
+    setFormData({...formData, [e.target.id] : dataObject })
   }
 
   let properCase = (string) => {
