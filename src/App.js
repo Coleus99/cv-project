@@ -6,8 +6,14 @@ import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import { useEffect, useState } from "react";
+import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
 
 function App(){
+  const [showDialog, setShowDialog] = useState(false);
+  const open = () => setShowDialog(true);
+  const close = () => setShowDialog(false);
+
   const[editTarget,setEditTarget] = useState('');
   const[formFields,setFormFields] = useState([]);
   const[data,setData] = useState({
@@ -36,22 +42,20 @@ function App(){
   });
 
   function edit(target){
+    setShowDialog(true)
     setEditTarget(target)
     setFormFields(data[target])
   };
   function save(e, editTarget, formData){
     e.preventDefault();
-    console.log(formData)
     setData({...data, [editTarget] : formData})
-    // let newState = data;
-    // newState[data.editTarget] = data;
-    // this.setState(newState);
+    setShowDialog(false)
   };
 
   return (
     <div>
-      <Header id="title" title={data.title} edit={edit} />
-      <Form fields={formFields} save={save} editTarget={editTarget}/>
+      <Header id="title" title={data.title} edit={edit}/>
+      <Form fields={formFields} save={save} editTarget={editTarget} showDialog={showDialog} close={close} />
       <main>
         <div className="py-5">
           <div className="container">
