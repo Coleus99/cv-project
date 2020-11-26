@@ -5,13 +5,11 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
-import { useEffect, useState } from "react";
-import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import { useState } from "react";
 import "@reach/dialog/styles.css";
 
 function App(){
   const [showDialog, setShowDialog] = useState(false);
-  const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
 
   const[editTarget,setEditTarget] = useState('');
@@ -20,6 +18,7 @@ function App(){
     title: {
       name: ["John Doe","text"],
       position: ["Digital Designer","text"],
+      imageURL: ["https://i.pravatar.cc/150?img=68","text"],
     },
     contact: {
       email: ["john@example.com", "email"],
