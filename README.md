@@ -1,5 +1,5 @@
 # cv-project
-Part of the Odin Project Full-Stack JS course
+Part of the Odin Project Full-Stack JS course. [Live preview](https://coleus99.github.io/cv-project/)
 
 ## Objectives
 * Build a CV in HTML using React
